@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, Put } from '@nestjs/common';
 import { Customer } from 'src/models/customer.model';
 import { CustomerService } from 'src/services/customer/customer.service';
 
@@ -10,7 +10,7 @@ export class CustomerController {
     create(
         @Body('costumer_key') customerKey: number,
         @Body('customer_name') customerName: string
-    ): Customer {
+    ): Promise<Customer> {
         return this.customerService.create(customerKey, customerName);
     }
 
@@ -19,7 +19,7 @@ export class CustomerController {
         return this.customerService.findById(id);
     }
 
-    @Post(':id')
+    @Put(':id')
     update(
         @Param('id') id: string,
         @Body('costumer_key') customerKey: number,
