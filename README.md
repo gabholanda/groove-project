@@ -31,7 +31,7 @@
 ## Installation
 
 
-``` Create a .env file with the following properties:
+```Create a .env file with the following properties:
 GROOVE_URL = the Groove API URL
 GROOVE_USERNAME = your groove username
 GROOVE_PASSWORD = your groove password
